@@ -1,0 +1,75 @@
+<div class="container-login">
+  <div class="app-login">
+    <a href="/" class="btn-login">
+      &#x276E;
+    </a>
+    <div class="login-app">
+      <h3>
+        Faça seu login
+      </h3>
+      {{#if erro}}
+        <div class="mensagem-erro">{{erro}}</div>
+      {{/if}}
+    </div>
+    <div class="form-login">
+      <form action="/login" method="POST">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Digite seu email"
+          required
+        />
+
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Digite sua senha"
+          required
+        />
+
+        <div class="esqueceu-senha">
+          <a href="/esqueceu-senha">Esqueceu a senha?</a>
+        </div>
+
+        <button type="submit" class="btn-enter">Entrar</button>
+      </form>
+    </div>
+    <div class="login-apps">
+      <div class="login-txt">
+        <hr />
+        <span>Ou entre com</span>
+        <hr />
+      </div>
+
+      <div class="social-buttons">
+        <button class="social-btn google">
+          <img src="/img/1975.jpg" alt="Google" />
+        </button>
+        <button class="social-btn facebook">
+          <img src="/img/2025.png" alt="Facebook" />
+        </button>
+        <button class="social-btn apple">
+          <img src="/img/1421.png" alt="Apple" />
+        </button>
+      </div>
+
+      <div class="cadastro-txt">
+        <a>Ainda não tem uma conta ?<br />
+          <a href="/cadastrar" class="cadastro-link">Faça seu cadastro</a>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () { const emailInput =
+  document.querySelector('input[name="email"]'); const passwordInput =
+  document.querySelector('input[name="password"]'); const errorMessage =
+  document.querySelector(".mensagem-erro"); function esconderErro() { if
+  (errorMessage) { errorMessage.style.display = "none"; } }
+  emailInput.addEventListener("input", esconderErro);
+  passwordInput.addEventListener("input", esconderErro); });
+</script>
