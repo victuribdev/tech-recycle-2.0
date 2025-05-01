@@ -356,7 +356,7 @@ button {
 }
 
 .bottom-nav svg:hover {
-  fill: #218838;
+  fill: #ffffff;
   stroke: #218838;
 }
 
@@ -436,7 +436,7 @@ button {
 
 .button-pontos button:hover svg {
   stroke: white;
-  fill: white;
+  fill: #28a745;
 }
 
 .button-pontos button:hover {
