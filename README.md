@@ -1,6 +1,7 @@
-# Código Fonte
+# 🌱 Tech-Recycle
+Sistema web para incentivar o descarte correto de resíduos, com cadastro e login de usuários, funcionalidades de mapa e informações de reciclagem.
 
-https://github.com/YspaceBR/Tech-Recycle
+## 📁 Estrutura do Projeto
 
 Tech-Recycle/
 ├── assets/ # Arquivos estáticos (CSS, imagens)
@@ -16,10 +17,6 @@ Tech-Recycle/
 ├── index.js # Arquivo principal da aplicação
 ├── package.json
 └── README.md
-
-# 🌱 Tech-Recycle
-
-Sistema web para incentivar o descarte correto de resíduos, com cadastro e login de usuários, funcionalidades de mapa e informações de reciclagem.
 
 ## 📦 Tecnologias
 
