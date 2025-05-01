@@ -1,23 +1,23 @@
-# Código Fonte 
+# Código Fonte
+
 https://github.com/YspaceBR/Tech-Recycle
 
 Tech-Recycle/
-├── assets/               # Arquivos estáticos (CSS, imagens)
-├── controllers/          # Lógica das rotas e controladores
-├── models/               # Acesso ao banco de dados (usuário, etc.)
-├── routes/               # Arquivos de rotas organizadas
-├── tests/                # Testes de unidade com Jest
+├── assets/ # Arquivos estáticos (CSS, imagens)
+├── controllers/ # Lógica das rotas e controladores
+├── models/ # Acesso ao banco de dados (usuário, etc.)
+├── routes/ # Arquivos de rotas organizadas
+├── tests/ # Testes de unidade com Jest
 ├── views/
-│   ├── layouts/
-│   ├── public/
-│   └── auth/
+│ ├── layouts/
+│ ├── public/
+│ └── auth/
 ├── .env
-├── index.js              # Arquivo principal da aplicação
+├── index.js # Arquivo principal da aplicação
 ├── package.json
 └── README.md
 
-
-# 🌱 E-Reciclagem
+# 🌱 Tech-Recycle
 
 Sistema web para incentivar o descarte correto de resíduos, com cadastro e login de usuários, funcionalidades de mapa e informações de reciclagem.
 
