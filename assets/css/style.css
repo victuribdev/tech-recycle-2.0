@@ -436,6 +436,7 @@ button {
 
 .button-pontos button:hover svg {
   stroke: white;
+  fill: white;
 }
 
 .button-pontos button:hover {
@@ -566,7 +567,6 @@ button {
 .user-menu {
   list-style: none;
 }
-
 .user-menu li {
   border-bottom: 1px solid #ddd;
 }
