@@ -87,9 +87,9 @@ span {
 }
 
 button {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .entrar {
@@ -357,6 +357,7 @@ button {
 
 .bottom-nav svg:hover {
   fill: #218838;
+  stroke: #218838;
 }
 
 .nav-item {
@@ -405,9 +406,9 @@ button {
 
 .button-pontos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 150px);
   background-color: white;
-  gap: 20px;
+  gap: 7vh;
   margin: 1rem 0;
   margin-right: 10px;
 }
@@ -419,10 +420,11 @@ button {
   flex-direction: column;
   gap: 5px;
   text-align: left;
-  border: 2px solid #28a745;
+  border: none;
   align-items: center;
   background-color: white;
   transition: background-color 0.2s ease-in-out;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .button-pontos svg {
@@ -433,7 +435,7 @@ button {
 }
 
 .button-pontos button:hover svg {
-  fill: white;
+  stroke: white;
 }
 
 .button-pontos button:hover {
@@ -467,11 +469,9 @@ button {
   margin-top: 10px;
   background-color: white;
   color: #28a745;
-  border: 2px solid #28a745;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
+  border: 1px solid #28a745;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
