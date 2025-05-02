@@ -99,6 +99,7 @@ span {
   margin-left: 65px;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+  color: white;
   font-weight: 500;
 }
 
@@ -436,13 +437,13 @@ span {
 }
 
 button:focus {
-  outline: none; 
-  box-shadow: none; 
+  outline: none;
+  box-shadow: none;
 }
 
 a:focus {
-  outline: none; 
-  box-shadow: none; 
+  outline: none;
+  box-shadow: none;
 }
 
 .button-pontos button:hover svg {
