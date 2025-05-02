@@ -29,7 +29,7 @@ body {
 h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h4 {
@@ -86,12 +86,6 @@ span {
   margin-right: 65px;
 }
 
-button {
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-}
-
 .entrar {
   background-color: #28a745;
   padding: 10px;
@@ -103,7 +97,9 @@ button {
 
 .cadastrar {
   margin-left: 65px;
-  width: 200px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .cadastrar:hover {
@@ -421,10 +417,13 @@ button {
   gap: 5px;
   text-align: left;
   border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
   align-items: center;
   background-color: white;
   transition: background-color 0.2s ease-in-out;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
 }
 
 .button-pontos svg {
@@ -472,6 +471,9 @@ button {
   color: #28a745;
   border: 1px solid #28a745;
   padding: 1rem 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
