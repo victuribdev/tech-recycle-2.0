@@ -415,6 +415,7 @@ span {
   border-radius: 12px;
   flex-direction: column;
   gap: 5px;
+  color: #333;
   text-align: left;
   border: none;
   font-family: "Montserrat", sans-serif;
@@ -435,13 +436,13 @@ span {
 }
 
 button:focus {
-  outline: none; /* Remove o contorno ao focar o botão */
-  box-shadow: none; /* Remove qualquer sombra */
+  outline: none; 
+  box-shadow: none; 
 }
 
 a:focus {
-  outline: none; /* Remove o contorno ao focar links */
-  box-shadow: none; /* Remove qualquer sombra */
+  outline: none; 
+  box-shadow: none; 
 }
 
 .button-pontos button:hover svg {
