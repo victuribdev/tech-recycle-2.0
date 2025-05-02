@@ -422,6 +422,7 @@ span {
   font-weight: 100;
   align-items: center;
   background-color: white;
+  -webkit-tap-highlight-color: transparent;
   transition: background-color 0.2s ease-in-out;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
 }
@@ -431,6 +432,13 @@ span {
   height: 24px;
   text-align: left;
   flex-shrink: 0;
+}
+
+.button-pontos button:focus,
+.button-pontos button:active {
+  color: #28a745 !important;
+  outline: none;
+  box-shadow: none;
 }
 
 .button-pontos button:hover svg {
