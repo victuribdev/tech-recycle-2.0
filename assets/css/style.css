@@ -434,11 +434,14 @@ span {
   flex-shrink: 0;
 }
 
-.button-pontos button:focus,
-.button-pontos button:active {
-  color: #28a745 !important;
-  outline: none;
-  box-shadow: none;
+button:focus {
+  outline: none; /* Remove o contorno ao focar o botão */
+  box-shadow: none; /* Remove qualquer sombra */
+}
+
+a:focus {
+  outline: none; /* Remove o contorno ao focar links */
+  box-shadow: none; /* Remove qualquer sombra */
 }
 
 .button-pontos button:hover svg {
