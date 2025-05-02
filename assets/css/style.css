@@ -438,16 +438,6 @@ span {
   flex-shrink: 0;
 }
 
-button:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-a:focus {
-  outline: none;
-  box-shadow: none;
-}
-
 .button-pontos button:hover svg {
   stroke: white;
   fill: #28a745;
@@ -608,5 +598,5 @@ a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8vh;
+  margin-top: 4vh;
 }
