@@ -414,7 +414,7 @@ span {
 
 .button-pontos button {
   display: grid;
-  padding: 1rem;
+  padding: 10px;
   border-radius: 12px;
   flex-direction: column;
   gap: 5px;
@@ -428,7 +428,7 @@ span {
   background-color: white;
   -webkit-tap-highlight-color: transparent;
   transition: background-color 0.2s ease-in-out;
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .button-pontos svg {

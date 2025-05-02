@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./index.js",
     "dev": "nodemon ./index.js",
-    "deploy": "git add . && (git diff --cached --quiet || git commit -m \"Atualização sombras input e form\") && git push origin main"
+    "deploy": "git add . && (git diff --cached --quiet || git commit -m \"Estilização nos buttons\") && git push origin main"
   },
   "keywords": [],
   "author": "",
