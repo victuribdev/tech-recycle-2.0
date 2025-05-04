@@ -1,0 +1,33 @@
+<div class="container-login">
+  <a href="/user" class="btn-login" id="back-btn">&#x276E;</a>
+  <div class="form-grapper">
+    <h3 style="text-align: left;">Meus dados</h3>
+
+    {{#if usuario}}
+      <table class="tabela-cadastro">
+        <tbody>
+          <tr>
+            <th>Nome</th>
+            <td>{{usuario.nome}}</td>
+            <th>Email</th>
+            <td>{{usuario.email}}</td>
+            <th>Senha</th>
+            <td>••••••••</td>
+          </tr>
+        </tbody>
+      </table>
+      <form
+        action="/excluir"
+        method="POST"
+        onsubmit="return confirm('Tem certeza de que deseja excluir sua conta?');"
+      >
+        <div class="container-btn-excluir">
+          <button class="btn-excluir">Excluir</button>
+        </div>
+      </form>
+    {{else}}
+      <p class="error-message">{{#if erro}}{{erro}}{{else}}Nenhum dado de
+          usuário encontrado.{{/if}}</p>
+    {{/if}}
+  </div>
+</div>

@@ -600,3 +600,75 @@ span {
   align-items: center;
   margin-top: 4vh;
 }
+
+.form-grapper {
+  width: 100%;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.form-grapper h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+}
+
+/* Estilo da tabela */
+.tabela-cadastro {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.tabela-cadastro th,
+.tabela-cadastro td {
+  padding: 10px;
+  text-align: left;
+}
+
+.tabela-cadastro th {
+  font-size: 16px;
+  border: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.tabela-cadastro tr {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.tabela-cadastro td {
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  display: block;
+  width: 100%;
+}
+
+.container-btn-excluir {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente, se necessário */
+  width: 100%; /* Garante que ocupe toda a largura disponível */
+}
+
+/* Botão de excluir */
+.btn-excluir {
+  background-color: #dc3545; /* Cor vermelha */
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  /* Remover qualquer margem ou alinhamento que possa desalinhar o botão */
+}
+
+.btn-excluir:hover {
+  background-color: #c82333; /* Cor vermelha mais escura */
+}
