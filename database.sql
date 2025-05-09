@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS pontos_coleta (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  endereco VARCHAR(255) NOT NULL,
+  cep VARCHAR(8) NOT NULL,
+  tipo_material VARCHAR(50) NOT NULL,
+  latitude DECIMAL(10, 8) NOT NULL,
+  longitude DECIMAL(11, 8) NOT NULL,
+  usuario_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+); 

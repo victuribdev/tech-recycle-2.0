@@ -9,25 +9,45 @@
   const PORT = process.env.PORT || 3000;
   const app = express();
 
-  const conn = mysql.createConnection({
+  const conn = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0,
+    enableKeepAlive: true,
+    keepAliveInitialDelay: 0
   });
 
-  const sessionStore = new MySQLStore({}, conn.promise());
+  // Criar uma conexão promisificada para o MySQLStore
+  const promisePool = conn.promise();
+
+  const sessionStore = new MySQLStore({
+    expiration: 86400000, // 24 horas
+    createDatabaseTable: true,
+    schema: {
+      tableName: 'sessions',
+      columnNames: {
+        session_id: 'session_id',
+        expires: 'expires',
+        data: 'data'
+      }
+    }
+  }, promisePool);
 
   app.use(
     session({
-      secret: "seuSegredoAqui",
+      secret: process.env.SESSION_SECRET || "seuSegredoAqui",
       resave: false,
       saveUninitialized: false,
       store: sessionStore,
     })
   );
 
+  app.use(express.json());
   app.use(express.urlencoded({
     extended: true
   }));
@@ -45,18 +65,19 @@
 
   app.use(express.static(path.join(__dirname, "assets")));
 
-  conn.connect((err) => {
-    if (err) {
-      console.log("Erro ao conectar ao MySQL:", err);
-      return;
-    }
+  // Teste de conexão
+  promisePool.getConnection()
+    .then(connection => {
+      console.log("Conectado ao MySQL!");
+      connection.release();
 
-    console.log("Conectado ao MySQL!");
-
-    app.listen(PORT, () => {
-      console.log(`🚀 Servidor rodando em ${PORT}`);
+      app.listen(PORT, () => {
+        console.log(`🚀 Servidor rodando em ${PORT}`);
+      });
+    })
+    .catch(err => {
+      console.error("Erro ao conectar ao MySQL:", err);
     });
-  });
 
   function checarAutenticacao(req, res, next) {
     if (req.session && req.session.usuario) {
@@ -234,6 +255,60 @@
       };
 
       res.redirect("/principal");
+    });
+  });
+
+  // Rotas para pontos de coleta
+  app.post("/api/pontos-coleta", checarAutenticacao, (req, res) => {
+    const { nome, endereco, cep, tipoMaterial, lat, lng } = req.body;
+    const usuarioId = req.session.usuario.id;
+
+    const sql = "INSERT INTO pontos_coleta (nome, endereco, cep, tipo_material, latitude, longitude, usuario_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    const values = [nome, endereco, cep, tipoMaterial, lat, lng, usuarioId];
+
+    conn.query(sql, values, (err, result) => {
+      if (err) {
+        console.error("Erro ao salvar ponto de coleta:", err);
+        return res.status(500).json({ erro: "Erro ao salvar ponto de coleta" });
+      }
+
+      res.json({ 
+        id: result.insertId,
+        mensagem: "Ponto de coleta salvo com sucesso" 
+      });
+    });
+  });
+
+  app.get("/api/pontos-coleta", (req, res) => {
+    const sql = "SELECT * FROM pontos_coleta";
+    
+    conn.query(sql, (err, results) => {
+      if (err) {
+        console.error("Erro ao buscar pontos de coleta:", err);
+        return res.status(500).json({ erro: "Erro ao buscar pontos de coleta" });
+      }
+
+      res.json(results);
+    });
+  });
+
+  app.delete("/api/pontos-coleta/:id", checarAutenticacao, (req, res) => {
+    const pontoId = req.params.id;
+    const usuarioId = req.session.usuario.id;
+
+    const sql = "DELETE FROM pontos_coleta WHERE id = ? AND usuario_id = ?";
+    
+    conn.query(sql, [pontoId, usuarioId], (err, result) => {
+      if (err) {
+        console.error("Erro ao excluir ponto de coleta:", err);
+        return res.status(500).json({ erro: "Erro ao excluir ponto de coleta" });
+      }
+
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ erro: "Ponto de coleta não encontrado ou não autorizado" });
+      }
+
+      res.json({ mensagem: "Ponto de coleta excluído com sucesso" });
     });
   });
 
